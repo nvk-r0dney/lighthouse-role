@@ -1,38 +1,34 @@
-Role Name
+lighthouse-role
 =========
 
-A brief description of the role goes here.
+Роль по установке и настройке Lighthouse, созданная в учебных целях.
 
 Requirements
 ------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+Роль написана для EL-систем (CentOS 8 Stream, CentOS 9 Stream)
 
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+| Variable | Default value | Description |
+-----------|---------------|------------
+| lighthouse_repo | https://github.com/VKCOM/lighthouse.git | Определяет источник скачивания Lighthouse |
+| lighthouse_site_path | /usr/share/nginx/lighthouse | Определяет путь для Lighthouse на хосте |
+| lighthouse_user | cloud-user | Определяет пользователя для работы сервиса nginx.service |
 
-Dependencies
-------------
+Tags
+----
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
-
-Example Playbook
-----------------
-
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
-
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
-
-License
--------
-
-BSD
+| Tag | Description |
+|-----|-------------|
+| config_nginx | Таск определяет настройки веб-сервера nginx по указанному шаблону |
+| clone_repo_lighthouse | Таск клонирует Lighthouse из указанного Git-репозитория |
+| config_lighthouse_service | Таск определяет настройки Lighthouse для веб-сервера nginx по указанному шаблону |
 
 Author Information
 ------------------
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+Author: Kirill Shapovalov
+
+Group: netology-devops-25
